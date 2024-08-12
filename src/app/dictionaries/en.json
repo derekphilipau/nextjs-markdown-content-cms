@@ -1,0 +1,22 @@
+{
+  "site": {
+    "title": "Derek Philip Au",
+    "description": "Derek Philip Au's personal blog.",
+    "tagline": "The porcelain road is bumpy."
+  },
+  "contentTypes": {
+    "post": {
+      "singular": "Post",
+      "plural": "Posts"
+    },
+    "tag": {
+      "singular": "Tag",
+      "plural": "Tags"
+    },
+    "page": {
+      "singular": "Page",
+      "plural": "Pages"
+    }
+  },
+  "more": "More"
+}
