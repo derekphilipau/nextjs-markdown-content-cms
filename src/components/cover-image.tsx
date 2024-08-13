@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { resolveImagePath } from "@/lib/util/image";
 import { siteConfig } from "@/siteConfig";
-import type { MarkdownContent } from "@/types";
+import type { Content } from "@/types";
 
 type CoverImageProps = {
-  content: MarkdownContent;
+  content: Content;
 };
 
 const CoverImage = ({ content }: CoverImageProps) => {

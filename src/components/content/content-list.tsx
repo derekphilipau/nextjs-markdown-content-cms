@@ -1,11 +1,12 @@
-import { MarkdownContent } from "@/types";
+import { Content } from "@/types";
 import { ContentPreview } from "./content-preview";
 import { Pagination } from "../layout/pagination";
-import type { Pagination as PaginationType } from "@/types";
+import type { Pagination as PaginationType, ContentType } from "@/types";
+import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 type ContentListProps = {
-  contentType: string;
-  items: MarkdownContent[];
+  contentType: ContentType;
+  items: Content[];
   pagination: PaginationType;
 };
 
@@ -14,10 +15,11 @@ export function ContentList({
   items,
   pagination,
 }: ContentListProps) {
+  const dict = getDictionary();
   return (
-    <section>
+    <section className="py-6">
       <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
-        More Stories
+        More {dict.contentTypes[contentType].plural}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
         {items.map((content) => (

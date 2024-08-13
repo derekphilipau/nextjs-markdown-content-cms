@@ -1,3 +1,5 @@
+export type ContentType = "post" | "tag" | "page";
+
 export type SiteContentType = {
   slug: string;
 };
@@ -29,8 +31,8 @@ export type Author = {
   picture: string;
 };
 
-export type MarkdownContent = {
-  contentType: string;
+export type Content = {
+  contentType: ContentType;
   slug: string;
   title: string;
   date: string;
@@ -46,7 +48,7 @@ export type MarkdownContent = {
 };
 
 export type ContentRequest = {
-  contentType: string;
+  contentType: ContentType;
   tag?: string;
   page?: number;
   limit?: number;
@@ -60,6 +62,6 @@ export type Pagination = {
 };
 
 export type ContentResponse = {
-  results: MarkdownContent[];
+  results: Content[];
   pagination: Pagination;
 };

@@ -1,4 +1,9 @@
-import type { ContentRequest, ContentResponse, MarkdownContent } from "@/types";
+import type {
+  ContentRequest,
+  ContentResponse,
+  Content,
+  ContentType,
+} from "@/types";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -7,33 +12,37 @@ import markdownToHtml from "@/lib/util/markdownToHtml";
 
 const contentDirectory = join(process.cwd(), "public/content");
 
-export function getContentDirectory(contentType: string) {
+export function getContentDirectory(contentType: ContentType) {
   const slug = siteConfig.contentTypes[contentType].slug;
   return join(contentDirectory, slug);
 }
 
-export function getContentSlugs(contentType: string) {
+export function getContentSlugs(contentType: ContentType) {
   const directory = getContentDirectory(contentType);
   return fs
     .readdirSync(directory)
     .filter((file) => fs.statSync(join(directory, file)).isDirectory());
 }
 
-export async function getContentBySlug(contentType: string, slug: string) {
+export async function getContentBySlug(contentType: ContentType, slug: string) {
   const fullPath = join(getContentDirectory(contentType), slug, "index.md");
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  try {
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data, content } = matter(fileContents);
 
-  const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
-  const htmlContent = await markdownToHtml(contentTypeSlug, slug, content);
+    const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
+    const htmlContent = await markdownToHtml(contentTypeSlug, slug, content);
 
-  return {
-    ...data,
-    slug,
-    content,
-    htmlContent,
-    contentType,
-  } as MarkdownContent;
+    return {
+      ...data,
+      slug,
+      content,
+      htmlContent,
+      contentType,
+    } as Content;
+  } catch {
+    return null;
+  }
 }
 
 export async function getContent({

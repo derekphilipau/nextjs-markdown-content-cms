@@ -1,10 +1,10 @@
 import CoverImage from "../cover-image";
 import DateFormatter from "../date-formatter";
 import { ContentTitle } from "./content-title";
-import type { MarkdownContent } from "@/types";
+import type { Content } from "@/types";
 
 type ContentHeaderProps = {
-  content: MarkdownContent;
+  content: Content;
 };
 
 export function ContentHeader({ content }: ContentHeaderProps) {

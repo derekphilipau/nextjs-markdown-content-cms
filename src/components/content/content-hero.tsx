@@ -4,10 +4,10 @@ import { type Author } from "@/types";
 import Link from "next/link";
 import DateFormatter from "../date-formatter";
 import { siteConfig } from "@/siteConfig";
-import type { MarkdownContent } from "@/types";
+import type { Content } from "@/types";
 
 type ContentHeroProps = {
-  content: MarkdownContent;
+  content: Content;
 };
 
 export function ContentHero({ content }: ContentHeroProps) {

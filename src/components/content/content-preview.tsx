@@ -3,10 +3,10 @@ import Link from "next/link";
 import CoverImage from "../cover-image";
 import DateFormatter from "../date-formatter";
 import { siteConfig } from "@/siteConfig";
-import type { MarkdownContent } from "@/types";
+import type { Content } from "@/types";
 
 type ContentPreviewProps = {
-  content: MarkdownContent;
+  content: Content;
 };
 
 export function ContentPreview({ content }: ContentPreviewProps) {
