@@ -4,7 +4,7 @@ import { getDictionary } from "@/lib/dictionaries/dictionaries";
 export function Footer() {
   const dict = getDictionary();
   return (
-    <footer className="border-t border-secondary">
+    <footer className="border-t border-secondary mt-12">
       <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-6 lg:mb-0 lg:pr-4 lg:w-1/2">

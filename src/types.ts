@@ -45,6 +45,7 @@ export type Content = {
   };
   content: string;
   htmlContent: string;
+  form?: string;
 };
 
 export type ContentRequest = {

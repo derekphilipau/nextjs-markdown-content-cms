@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getContentBySlug, getContent, getAllTags } from "@/lib/api/content";
 import { Container } from "@/components/layout/container";
 import { ContentHeader } from "@/components/content/content-header";
+import { ContentBody } from "@/components/content/content-body";
+import { ContentForm } from "@/components/content/content-form";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 type PageParams = {
@@ -23,32 +25,40 @@ export default async function Page({ params }: PageParams) {
       <Container>
         <ContentHeader content={content} />
         {content?.htmlContent && (
-          <div
-            className="mb-8 prose prose-lg lg:prose-2xl dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: content.htmlContent }}
-          />
+          <ContentBody htmlContent={content.htmlContent} />
         )}
+        <ContentForm content={content} />
       </Container>
     </main>
   );
 }
 
-export function generateMetadata({ params }: Params): Metadata {
+export async function generateMetadata({ params }: PageParams): Metadata {
+  const content = await getContentBySlug("page", params.page);
   const dict = getDictionary();
-  const title = `Posts tagged with "${params.tag}" | ${dict.site.title}`;
+
+  if (!content) {
+    return {
+      title: "Page Not Found",
+    };
+  }
+
+  const title = `${content.title} | ${dict.site.title}`;
 
   return {
     title,
+    description: content.excerpt,
     openGraph: {
       title,
+      description: content.excerpt,
     },
   };
 }
 
 export async function generateStaticParams() {
-  const tags = await getAllTags();
+  const response = await getContent({ contentType: "page" });
 
-  return tags.map((tag) => ({
-    tag: tag,
+  return response.results.map((page) => ({
+    page: page.slug,
   }));
 }
