@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 95%;
+    --background: 0 0% 97%;
     --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
@@ -63,5 +63,55 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+  }
+
+  a {
+    @apply text-blue-800 hover:text-blue-600 hover:no-underline dark:text-blue-400 dark:hover:text-blue-200 cursor-pointer;
+  }
+
+  a:visited {
+    @apply text-purple-800 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-200 cursor-pointer;
+  }
+}
+
+@layer components {
+  .h1-header {
+    @apply text-3xl md:text-5xl font-extrabold tracking-tighter leading-tight;
+  }
+
+  .h2-header {
+    @apply text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight;
+  }
+
+  .h3-header {
+    @apply text-xl md:text-3xl font-semibold tracking-normal leading-snug;
+  }
+
+  .h4-header {
+    @apply text-lg md:text-2xl font-medium tracking-normal leading-snug;
+  }
+
+  .h5-header {
+    @apply text-base md:text-xl font-medium tracking-normal leading-normal;
+  }
+
+  .h6-header {
+    @apply text-sm md:text-lg font-medium tracking-wide leading-normal;
+  }
+
+  .text-tagline {
+    @apply text-sm md:text-base text-muted-foreground;
+  }
+
+  .nav-link {
+    @apply text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-white hover:no-underline transition-colors duration-200;
+  }
+
+  a.nav-link {
+    @apply text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-white hover:no-underline transition-colors duration-200;
+  }
+
+  a.nav-link:visited {
+    @apply text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-white;
   }
 }

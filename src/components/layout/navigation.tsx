@@ -10,7 +10,7 @@ type NavigationProps = {
 };
 
 export function Navigation({ items, style }: NavigationProps) {
-  const baseClasses = "flex space-x-4";
+  const baseClasses = "flex flex-wrap gap-x-2 sm:gap-x-4 nav-link";
   const styleClasses =
     style === "primary"
       ? "text-lg font-semibold"
@@ -27,7 +27,7 @@ export function Navigation({ items, style }: NavigationProps) {
           <Link
             key={item.slug}
             href={item.slug}
-            className="hover:text-blue-500 transition-colors flex items-center"
+            className="nav-link flex items-center"
           >
             {item.icon && Icon ? <Icon size={24} /> : item.title}
           </Link>

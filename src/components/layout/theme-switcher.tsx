@@ -90,7 +90,7 @@ const Switch = () => {
   }
 
   return (
-    <button onClick={handleModeSwitch}>
+    <button onClick={handleModeSwitch} className="nav-link">
       {mode === "dark" ? <Moon /> : <Sun />}
     </button>
   );

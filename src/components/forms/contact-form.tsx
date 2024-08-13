@@ -12,8 +12,8 @@ export default function ContactForm() {
     );
   }
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-8">Contact Me</h1>
+    <div className="py-6 max-w-2xl mx-auto">
+      <h2 className="text-3xl mb-8">Contact Me</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label
