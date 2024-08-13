@@ -1,10 +1,10 @@
 import { parseISO, format } from "date-fns";
 
-type Props = {
+type DateFormatterProps = {
   dateString: string | Date;
 };
 
-const DateFormatter = ({ dateString }: Props) => {
+const DateFormatter = ({ dateString }: DateFormatterProps) => {
   const date =
     typeof dateString === "string" ? parseISO(dateString) : dateString;
   return (

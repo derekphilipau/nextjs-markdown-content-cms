@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getContentBySlug, getContent, getAllTags } from "@/lib/api/content";
 import { Container } from "@/components/layout/container";
-import { ContentPreview } from "@/components/content/content-preview";
+import { ContentHeader } from "@/components/content/content-header";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 type PageParams = {
@@ -21,7 +21,7 @@ export default async function Page({ params }: PageParams) {
   return (
     <main>
       <Container>
-        <h1 className="text-3xl font-bold mb-8">{content.title}</h1>
+        <ContentHeader content={content} />
         {content?.htmlContent && (
           <div
             className="mb-8 prose prose-lg lg:prose-2xl dark:prose-invert"

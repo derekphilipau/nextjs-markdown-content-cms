@@ -22,17 +22,7 @@ export default async function Index({
   return (
     <main>
       <Container>
-        {heroPost && (
-          <ContentHero
-            contentType={"post"}
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-          />
-        )}
+        {heroPost && <ContentHero content={heroPost} />}
         {results.length > 0 && (
           <ContentList
             contentType="post"

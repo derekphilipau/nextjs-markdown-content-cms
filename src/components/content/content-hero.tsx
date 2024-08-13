@@ -4,36 +4,19 @@ import { type Author } from "@/types";
 import Link from "next/link";
 import DateFormatter from "../date-formatter";
 import { siteConfig } from "@/siteConfig";
+import type { MarkdownContent } from "@/types";
 
 type ContentHeroProps = {
-  contentType: string;
-  title: string;
-  coverImage: string;
-  date: string;
-  excerpt: string;
-  author?: Author;
-  slug: string;
+  content: MarkdownContent;
 };
 
-export function ContentHero({
-  contentType,
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-}: ContentHeroProps) {
+export function ContentHero({ content }: ContentHeroProps) {
+  const { contentType, title, date, excerpt, slug } = content;
   const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
   return (
     <section>
       <div className="mb-8 md:mb-16">
-        <CoverImage
-          contentType={contentType}
-          title={title}
-          src={coverImage}
-          slug={slug}
-        />
+        <CoverImage content={content} />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>

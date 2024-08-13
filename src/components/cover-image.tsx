@@ -3,17 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { resolveImagePath } from "@/lib/util/image";
 import { siteConfig } from "@/siteConfig";
+import type { MarkdownContent } from "@/types";
 
-type Props = {
-  contentType: string;
-  title: string;
-  src: string;
-  slug: string;
+type CoverImageProps = {
+  content: MarkdownContent;
 };
 
-const CoverImage = ({ contentType, title, src, slug }: Props) => {
+const CoverImage = ({ content }: CoverImageProps) => {
+  const { contentType, title, coverImage, slug } = content;
   const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
-  const resolvedSrc = resolveImagePath(contentTypeSlug, slug, src);
+  const resolvedSrc = resolveImagePath(contentTypeSlug, slug, coverImage);
 
   const image = (
     <Image

@@ -27,7 +27,13 @@ export async function getContentBySlug(contentType: string, slug: string) {
   const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
   const htmlContent = await markdownToHtml(contentTypeSlug, slug, content);
 
-  return { ...data, slug, content, htmlContent } as MarkdownContent;
+  return {
+    ...data,
+    slug,
+    content,
+    htmlContent,
+    contentType,
+  } as MarkdownContent;
 }
 
 export async function getContent({

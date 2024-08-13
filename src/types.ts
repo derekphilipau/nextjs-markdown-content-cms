@@ -30,6 +30,7 @@ export type Author = {
 };
 
 export type MarkdownContent = {
+  contentType: string;
   slug: string;
   title: string;
   date: string;
