@@ -19,7 +19,7 @@ export function ContentHeader({ content }: ContentHeaderProps) {
       )}
       {coverImage && (
         <div className="mb-8 md:mb-16 sm:mx-0">
-          <CoverImage content={content} />
+          <CoverImage content={content} isLink={false} />
         </div>
       )}
     </>

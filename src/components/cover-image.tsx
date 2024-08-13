@@ -7,9 +7,10 @@ import type { Content } from "@/types";
 
 type CoverImageProps = {
   content: Content;
+  isLink?: boolean;
 };
 
-const CoverImage = ({ content }: CoverImageProps) => {
+const CoverImage = ({ content, isLink = true }: CoverImageProps) => {
   const { contentType, title, coverImage, slug } = content;
   const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
   const resolvedSrc = resolveImagePath(contentTypeSlug, slug, coverImage);
@@ -27,7 +28,7 @@ const CoverImage = ({ content }: CoverImageProps) => {
   );
   return (
     <div className="sm:mx-0">
-      {slug ? (
+      {slug && isLink ? (
         <Link href={`/${contentTypeSlug}/${slug}`} aria-label={title}>
           {image}
         </Link>
