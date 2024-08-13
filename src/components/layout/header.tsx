@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Navigation } from "./navigation";
 import { ThemeSwitcher } from "./theme-switcher";
-import { getDictionary } from "@/app/dictionaries/dictionaries";
+import { getDictionary } from "@/lib/dictionaries/dictionaries";
 import { siteConfig } from "@/siteConfig";
 
 export function Header() {

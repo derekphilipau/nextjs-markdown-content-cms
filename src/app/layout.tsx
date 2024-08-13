@@ -1,10 +1,10 @@
-import Footer from "@/app/_components/layout/footer";
+import Footer from "@/components/layout/footer";
 import { siteConfig } from "@/siteConfig";
 import type { Metadata } from "next";
 import { Cormorant_Garamond } from "next/font/google";
 import cn from "classnames";
-import { Header } from "./_components/layout/header";
-import { getDictionary } from "./dictionaries/dictionaries";
+import { Header } from "@/components/layout/header";
+import { getDictionary } from "../lib/dictionaries/dictionaries";
 
 import "./globals.css";
 

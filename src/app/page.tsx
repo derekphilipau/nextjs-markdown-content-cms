@@ -1,31 +1,44 @@
-import { Container } from "@/app/_components/layout/container";
-import { ContentHero } from "@/app/_components/content/content-hero";
-import { ContentList } from "@/app/_components/content/content-list";
+import { Container } from "@/components/layout/container";
+import { ContentHero } from "@/components/content/content-hero";
+import { ContentList } from "@/components/content/content-list";
 import { getContent } from "@/lib/api/content";
 
-export default async function Index() {
-  const res = await getContent();
-  const results = res.results;
+export default async function Index({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const page = Number(searchParams.page) || 1;
+  const response = await getContent({ page });
+  let results = response.results;
   console.log(results);
 
-  const heroPost = results[0];
-
-  const morePosts = results.slice(1);
+  let heroPost = null;
+  if (page === 1) {
+    heroPost = results[0];
+    results = results.slice(1);
+  }
 
   return (
     <main>
       <Container>
-        <ContentHero
-          contentType={"post"}
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && (
-          <ContentList contentType="post" items={morePosts} />
+        {heroPost && (
+          <ContentHero
+            contentType={"post"}
+            title={heroPost.title}
+            coverImage={heroPost.coverImage}
+            date={heroPost.date}
+            author={heroPost.author}
+            slug={heroPost.slug}
+            excerpt={heroPost.excerpt}
+          />
+        )}
+        {results.length > 0 && (
+          <ContentList
+            contentType="post"
+            items={results}
+            pagination={response.pagination}
+          />
         )}
       </Container>
     </main>

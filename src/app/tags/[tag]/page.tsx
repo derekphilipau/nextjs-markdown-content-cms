@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getContentBySlug, getContent, getAllTags } from "@/lib/api/content";
-import { Container } from "@/app/_components/layout/container";
-import { ContentPreview } from "@/app/_components/content/content-preview";
-import { getDictionary } from "@/app/dictionaries/dictionaries";
+import { Container } from "@/components/layout/container";
+import { ContentPreview } from "@/components/content/content-preview";
+import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 type Params = {
   params: {

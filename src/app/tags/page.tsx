@@ -1,4 +1,4 @@
-import { Container } from "@/app/_components/layout/container";
+import { Container } from "@/components/layout/container";
 import { getAllTags } from "@/lib/api/tags";
 import Link from "next/link";
 

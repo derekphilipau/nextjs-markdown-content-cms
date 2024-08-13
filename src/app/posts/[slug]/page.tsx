@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getContent, getContentBySlug } from "@/lib/api/content";
-import { Container } from "@/app/_components/layout/container";
-import { ContentBody } from "@/app/_components/content/content-body";
-import { ContentHeader } from "@/app/_components/content/content-header";
+import { Container } from "@/components/layout/container";
+import { ContentBody } from "@/components/content/content-body";
+import { ContentHeader } from "@/components/content/content-header";
 import { resolveImagePath } from "@/lib/util/image";
-import { getDictionary } from "@/app/dictionaries/dictionaries";
+import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 export default async function Post({ params }: Params) {
   const content = await getContentBySlug("post", params.slug);

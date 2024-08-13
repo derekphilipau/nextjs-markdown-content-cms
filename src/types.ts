@@ -51,12 +51,14 @@ export type ContentRequest = {
   limit?: number;
 };
 
+export type Pagination = {
+  total: number;
+  totalPages: number;
+  currentPage: number;
+  pageSize: number;
+};
+
 export type ContentResponse = {
   results: MarkdownContent[];
-  pagination: {
-    total: number;
-    totalPages: number;
-    currentPage: number;
-    pageSize: number;
-  };
+  pagination: Pagination;
 };

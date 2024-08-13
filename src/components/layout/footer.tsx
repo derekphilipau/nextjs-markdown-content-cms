@@ -1,5 +1,5 @@
-import { Container } from "@/app/_components/layout/container";
-import { getDictionary } from "@/app/dictionaries/dictionaries";
+import { Container } from "@/components/layout/container";
+import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 export function Footer() {
   const dict = getDictionary();
