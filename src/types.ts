@@ -12,11 +12,6 @@ export type SiteNavigationItem = {
 
 export type SiteConfig = {
   siteUrl: string;
-  social?: {
-    twitter?: string;
-    instagram?: string;
-    github?: string;
-  };
   ogImageUrl?: string;
   contentTypes: {
     [key: string]: SiteContentType;

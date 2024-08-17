@@ -30,6 +30,16 @@ I believe that great design is born from curiosity, empathy, and a dash of playf
 
 You can find me exploring the beautiful hiking trails of Northern California, experimenting with new cooking recipes, or sketching people at local cafes. I'm also an avid reader and always on the lookout for inspiring art and design books.
 
+## Testimonials
+
+Here's what some of my clients have to say:
+
+> "Lumi's designs breathed new life into our brand. Her creativity and attention to detail are unmatched!" - Sarah J., Tech Startup Founder
+
+> "Working with Lumi was a joy. She truly understands how to translate ideas into stunning visuals." - Mark T., Children's Book Author
+
+[Read more testimonials](/testimonials)
+
 ## Let's Create Together
 
 Whether you're looking to refresh your brand, need custom illustrations, or want to improve your product's user experience, I'd love to hear from you. Let's bring your ideas to life!

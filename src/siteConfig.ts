@@ -3,14 +3,11 @@ import type { SiteConfig } from "./types";
 const twitter = "lumithornedesign";
 const instagram = "lumithornedesign";
 const github = "lumithornedesign";
+const linkedin = "lumithornedesign";
+const dribbble = "lumithornedesign";
 
 export const siteConfig: SiteConfig = {
   siteUrl: "https://lumithornedesign.com",
-  social: {
-    twitter,
-    instagram,
-    github,
-  },
   ogImageUrl:
     "https://og-image.vercel.app/Next.js%20Blog%20Starter%20Example.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg",
   contentTypes: {
@@ -34,10 +31,6 @@ export const siteConfig: SiteConfig = {
       slug: "/about",
     },
     {
-      title: "Testimonials",
-      slug: "/testimonials",
-    },
-    {
       title: "Contact",
       slug: "/contact",
     },
@@ -50,6 +43,14 @@ export const siteConfig: SiteConfig = {
     {
       icon: "Github",
       slug: "https://github.com/" + github,
+    },
+    {
+      icon: "Linkedin",
+      slug: "https://linkedin.com/in/" + linkedin,
+    },
+    {
+      icon: "Dribbble",
+      slug: "https://dribbble.com/" + dribbble,
     },
   ],
   defaultPageSize: 6,
