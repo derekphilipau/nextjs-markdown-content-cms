@@ -12,8 +12,11 @@ type CoverImageProps = {
 
 const CoverImage = ({ content, isLink = true }: CoverImageProps) => {
   const { contentType, title, coverImage, slug } = content;
-  const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
-  const resolvedSrc = resolveImagePath(contentTypeSlug, slug, coverImage);
+  const imageSlug = siteConfig.contentTypes[contentType].slug;
+  const contentTypeSlug =
+    contentType === "page" ? "" : siteConfig.contentTypes[contentType].slug;
+
+  const resolvedSrc = resolveImagePath(imageSlug, slug, coverImage);
 
   const image = (
     <Image
@@ -29,7 +32,7 @@ const CoverImage = ({ content, isLink = true }: CoverImageProps) => {
   return (
     <div className="sm:mx-0">
       {slug && isLink ? (
-        <Link href={`/${contentTypeSlug}/${slug}`} aria-label={title}>
+        <Link href={`${contentTypeSlug}/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (
