@@ -23,7 +23,6 @@ export function Header() {
         <p className="text-tagline">{dict.site.tagline}</p>
       </div>
       <Navigation items={combinedNavItems} style="primary" />
-      <ThemeSwitcher />
       <div className="flex items-center gap-4">
         <Link href="/search" className="text-current hover:text-primary">
           <Search size={24} />
