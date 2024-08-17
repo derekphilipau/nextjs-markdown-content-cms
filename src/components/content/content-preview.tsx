@@ -11,7 +11,8 @@ type ContentPreviewProps = {
 
 export function ContentPreview({ content }: ContentPreviewProps) {
   const { contentType, title, date, excerpt, slug } = content;
-  const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
+  const contentTypeSlug =
+    contentType === "page" ? "" : siteConfig.contentTypes[contentType].slug;
   return (
     <div>
       <div className="mb-5">

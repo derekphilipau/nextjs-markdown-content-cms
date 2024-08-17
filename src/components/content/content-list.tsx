@@ -3,7 +3,6 @@ import { ContentPreview } from "./content-preview";
 import { Pagination } from "../layout/pagination";
 import type { Pagination as PaginationType, ContentType } from "@/types";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
-//{heroPost && <ContentHero content={heroPost} />}
 
 type ContentListProps = {
   contentType: ContentType;

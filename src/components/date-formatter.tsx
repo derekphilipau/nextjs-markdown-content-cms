@@ -7,6 +7,7 @@ type DateFormatterProps = {
 const DateFormatter = ({ dateString }: DateFormatterProps) => {
   const date =
     typeof dateString === "string" ? parseISO(dateString) : dateString;
+  if (!date) return null;
   return (
     <time dateTime={date.toISOString()}>{format(date, "LLLL	d, yyyy")}</time>
   );

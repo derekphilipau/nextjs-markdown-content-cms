@@ -3,6 +3,9 @@ export function resolveImagePath(
   slug: string,
   imagePath: string
 ): string {
+  if (!imagePath) {
+    return "";
+  }
   if (imagePath.startsWith("./")) {
     return `/content/${contentTypeSlug}/${slug}/${imagePath.slice(2)}`;
   }

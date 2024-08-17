@@ -3,6 +3,7 @@ import { Navigation } from "./navigation";
 import { ThemeSwitcher } from "./theme-switcher";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
 import { siteConfig } from "@/siteConfig";
+import { Search } from "lucide-react";
 
 export function Header() {
   const dict = getDictionary();
@@ -23,6 +24,13 @@ export function Header() {
       </div>
       <Navigation items={combinedNavItems} style="primary" />
       <ThemeSwitcher />
+      <div className="flex items-center gap-4">
+        <Link href="/search" className="text-current hover:text-primary">
+          <Search size={24} />
+          <span className="sr-only">Search</span>
+        </Link>
+        <ThemeSwitcher />
+      </div>
     </header>
   );
 }
