@@ -79,7 +79,16 @@ export async function getContentBySlug(
     .use(rehypeStringify)
     .process(content);
   const htmlContent = processedMarkdown.toString();
-  const { title, date, author, coverImage, tags, excerpt, ogImage } = data;
+  const {
+    title,
+    date,
+    author,
+    coverImage,
+    tags,
+    excerpt,
+    ogImage,
+    isHighlighted,
+  } = data;
 
   return {
     contentType,
@@ -92,6 +101,7 @@ export async function getContentBySlug(
     tags,
     excerpt,
     ogImage,
+    isHighlighted,
   } as Content;
 }
 
