@@ -4,7 +4,6 @@ import { getContentBySlug, getContent, getAllTags } from "@/lib/api/content";
 import { Container } from "@/components/layout/container";
 import { ContentHeader } from "@/components/content/content-header";
 import { ContentBody } from "@/components/content/content-body";
-import { ContentForm } from "@/components/content/content-form";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 type PageParams = {
@@ -24,10 +23,7 @@ export default async function Page({ params }: PageParams) {
     <main>
       <Container>
         <ContentHeader content={content} />
-        {content?.htmlContent && (
-          <ContentBody htmlContent={content.htmlContent} />
-        )}
-        <ContentForm content={content} />
+        <ContentBody content={content} />
       </Container>
     </main>
   );

@@ -1,14 +1,17 @@
+"use client";
+
+import type { Content } from "@/types";
+import ContentRenderer from "../content-renderer";
+
 type ContentBodyProps = {
-  htmlContent: string;
+  content: Content;
 };
 
-export async function ContentBody({ htmlContent }: ContentBodyProps) {
+export function ContentBody({ content }: ContentBodyProps) {
+  if (!content) return null;
   return (
-    <div className="max-w-2xl mx-auto">
-      <article
-        className="prose prose-lg lg:prose-2xl dark:prose-invert"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
-    </div>
+    <article className="max-w-2xl mx-auto prose prose-lg lg:prose-2xl dark:prose-invert">
+      <ContentRenderer htmlContent={content.htmlContent} />
+    </article>
   );
 }

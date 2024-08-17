@@ -43,9 +43,9 @@ export type Content = {
   ogImage: {
     url: string;
   };
-  content: string;
-  htmlContent: string;
+  htmlContent?: string;
   form?: string;
+  isHighlighted?: boolean;
 };
 
 export type ContentRequest = {

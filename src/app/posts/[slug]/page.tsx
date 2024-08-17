@@ -19,7 +19,7 @@ export default async function Post({ params }: Params) {
       <Container>
         <article className="mb-32">
           <ContentHeader content={content} />
-          <ContentBody htmlContent={content.htmlContent} />
+          <ContentBody content={content} />
         </article>
       </Container>
     </main>

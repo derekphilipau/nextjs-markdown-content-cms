@@ -24,7 +24,7 @@ export function ContentForm({ content }: ContentFormProps) {
     : null;
 
   if (!FormComponent) {
-    return <div>No form component specified</div>;
+    return null;
   }
 
   return (

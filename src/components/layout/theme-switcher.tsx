@@ -9,7 +9,7 @@ declare global {
 
 type ColorSchemePreference = "dark" | "light";
 
-const STORAGE_KEY = "nextjs-blog-starter-theme";
+const STORAGE_KEY = "nextjs-markdown-content-cms";
 const modes: ColorSchemePreference[] = ["dark", "light"];
 
 /** to reuse updateDOM function defined inside injected script */
