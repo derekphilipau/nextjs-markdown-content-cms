@@ -1,54 +1,55 @@
-import fs from "fs";
-import path from "path";
-import Fuse from "fuse.js";
-import { ContentList } from "@/components/content/content-list";
+"use client";
+
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Container } from "@/components/layout/container";
+import { ContentList } from "@/components/content/content-list";
 import SearchForm from "@/components/search/search-form";
 import type { Content } from "@/types";
 
-export default function SearchResults({
-  searchParams,
-}: {
-  searchParams: { q: string };
-}) {
-  const query = searchParams.q;
-  let searchResults: Array<{
-    item: Content;
-    refIndex: number;
-    score?: number;
-  }> = [];
-  if (query?.trim()) {
-    const searchDataPath = path.join(
-      process.cwd(),
-      "public",
-      "search-data.json"
-    );
-    const fuseIndexPath = path.join(process.cwd(), "public", "fuse-index.json");
+export default function SearchResults() {
+  const searchParams = useSearchParams();
+  const query = searchParams.get("q") || "";
+  const [searchResults, setSearchResults] = useState<
+    Array<{
+      item: Content;
+      refIndex: number;
+      score?: number;
+    }>
+  >([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-    const searchData: Content[] = JSON.parse(
-      fs.readFileSync(searchDataPath, "utf8")
-    );
-    const fuseIndex = JSON.parse(fs.readFileSync(fuseIndexPath, "utf8"));
+  useEffect(() => {
+    const fetchSearchResults = async () => {
+      if (query.trim()) {
+        setIsLoading(true);
+        try {
+          const response = await fetch(
+            `/api/search?q=${encodeURIComponent(query)}`
+          );
+          const data = await response.json();
+          setSearchResults(data.results);
+        } catch (error) {
+          console.error("Error fetching search results:", error);
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        setSearchResults([]);
+      }
+    };
 
-    const myIndex = Fuse.parseIndex(fuseIndex);
-    const fuse = new Fuse(
-      searchData,
-      {
-        keys: ["title", "excerpt", "tags", "content"],
-        includeScore: true,
-        threshold: 0.3,
-      },
-      myIndex
-    );
-    searchResults = fuse.search(query);
-  }
+    fetchSearchResults();
+  }, [query]);
 
   return (
     <main>
       <Container>
         <h1 className="h1-header">Search</h1>
         <SearchForm initialQuery={query} />
-        {query && query.trim() !== "" ? (
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : query && query.trim() !== "" ? (
           <>
             <h2>Results for "{query}"</h2>
             <ContentList

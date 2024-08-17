@@ -58,13 +58,20 @@ async function generateSearchIndex() {
 
   const fuseIndex = fuse.getIndex();
 
+  const dataDir = path.join(process.cwd(), "data");
+
+  // Ensure the data directory exists
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+
   fs.writeFileSync(
-    path.join(process.cwd(), "public", "search-data.json"),
+    path.join(dataDir, "search-data.json"),
     JSON.stringify(searchIndex, null, 2)
   );
 
   fs.writeFileSync(
-    path.join(process.cwd(), "public", "fuse-index.json"),
+    path.join(dataDir, "fuse-index.json"),
     JSON.stringify(fuseIndex.toJSON(), null, 2)
   );
 
