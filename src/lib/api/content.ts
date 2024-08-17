@@ -12,6 +12,8 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
+import { visit } from "unist-util-visit";
+import type { Image } from "mdast";
 
 const CONTENT_DIRECTORY = path.join(process.cwd(), "public/content");
 
@@ -61,6 +63,18 @@ export async function getContentBySlug(
   const { data, content } = matter(fileContents);
   const processedMarkdown = await unified()
     .use(remarkParse)
+    .use(() => (tree) => {
+      // MD files may contain relatively linked images, e.g.:
+      // ![My image](./images/my_image.webp)
+      // Transform to: /content/posts/my-post/images/my_image.webp
+      visit(tree, "image", (node: Image) => {
+        if (node.url && node.url.startsWith("./")) {
+          node.url = `/content/${
+            siteConfig.contentTypes[contentType].slug
+          }/${slug}/${node.url.slice(2)}`;
+        }
+      });
+    })
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeStringify)
     .process(content);

@@ -28,6 +28,8 @@ The magic happens when you combine the precision and scalability of digital desi
 
 ## My Process for Integrating Hand-Drawn Elements
 
+![My process for integrating hand-drawn elements](./images/process.webp)
+
 1. **Sketch First**: I always start on paper. This allows for a more natural, uninhibited creative process.
 2. **Scan or Photograph**: High resolution is key here. I often increase the contrast to make digitizing easier.
 3. **Digitize**: Depending on the project, I might use image trace in Adobe Illustrator for a more vectorized look, or keep it as a raster image for a more authentic feel.
