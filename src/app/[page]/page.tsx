@@ -29,7 +29,9 @@ export default async function Page({ params }: PageParams) {
   );
 }
 
-export async function generateMetadata({ params }: PageParams): Metadata {
+export async function generateMetadata({
+  params,
+}: PageParams): Promise<Metadata> {
   const content = await getContentBySlug("page", params.page);
   const dict = getDictionary();
 

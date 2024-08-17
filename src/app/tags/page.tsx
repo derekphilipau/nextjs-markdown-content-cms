@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout/container";
-import { getAllTags } from "@/lib/api/tags";
+import { getAllTags } from "@/lib/api/content";
 import Link from "next/link";
 
 export default async function TagsIndex() {
@@ -13,11 +13,9 @@ export default async function TagsIndex() {
         </h2>
         <div className="content-grid">
           {allTags.map((tag) => (
-            <Link key={tag.slug} href={`/tags/${tag.slug}`}>
-              <h3 className="text-3xl mb-3 leading-snug">{tag.name}</h3>
-              <p className="text-lg leading-relaxed mb-4">
-                {tag.count} {tag.count === 1 ? "post" : "posts"}
-              </p>
+            <Link key={tag} href={`/tags/${tag}`}>
+              <h3 className="text-3xl mb-3 leading-snug">{tag}</h3>
+              <p className="text-lg leading-relaxed mb-4">tag count tbd</p>
             </Link>
           ))}
         </div>
