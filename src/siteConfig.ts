@@ -1,11 +1,11 @@
 import type { SiteConfig } from "./types";
 
-const twitter = "derekphilipau";
-const instagram = "glazyorg";
-const github = "derekphilipau";
+const twitter = "lumithornedesign";
+const instagram = "lumithornedesign";
+const github = "lumithornedesign";
 
 export const siteConfig: SiteConfig = {
-  siteUrl: "https://derekau.net",
+  siteUrl: "https://lumithornedesign.com",
   social: {
     twitter,
     instagram,
@@ -30,12 +30,16 @@ export const siteConfig: SiteConfig = {
       slug: "/",
     },
     {
-      title: "Blog",
-      slug: "/blog",
-    },
-    {
       title: "About",
       slug: "/about",
+    },
+    {
+      title: "Testimonials",
+      slug: "/testimonials",
+    },
+    {
+      title: "Contact",
+      slug: "/contact",
     },
   ],
   secondaryNavigation: [
@@ -48,5 +52,5 @@ export const siteConfig: SiteConfig = {
       slug: "https://github.com/" + github,
     },
   ],
-  defaultPageSize: 3,
+  defaultPageSize: 6,
 };

@@ -13,14 +13,13 @@ export function Pagination({ pagination, basePath }: PaginationProps) {
   return (
     <div className="flex flex-wrap gap-y-4 items-center justify-between mt-8">
       <div className="text-lg text-muted-foreground">
-        Showing {(currentPage - 1) * pageSize + 1} to{" "}
-        {Math.min(currentPage * pageSize, total)} of {total} results
+        {total} items • Page {currentPage} of {totalPages}
       </div>
-      <div className="flex space-x-2 w-full sm:w-auto">
+      <div className="flex justify-between gap-x-4 md:gap-x-8 w-full sm:w-auto text-lg">
         {currentPage > 1 && (
           <Link
             href={`${basePath}?page=${currentPage - 1}`}
-            className="w-full px-3 py-2 text-lg font-medium text-muted-foreground border border-gray-300 rounded-md hover:bg-gray-50 flex items-center space-x-1 whitespace-nowrap"
+            className="flex items-center space-x-1 whitespace-nowrap nav-link"
           >
             <ChevronLeft size={24} />
             Previous
@@ -29,7 +28,7 @@ export function Pagination({ pagination, basePath }: PaginationProps) {
         {currentPage < totalPages && (
           <Link
             href={`${basePath}?page=${currentPage + 1}`}
-            className="w-full px-3 py-2 text-lg font-medium text-muted-foreground border border-gray-300 rounded-md hover:bg-gray-50 flex items-center space-x-1 whitespace-nowrap"
+            className="flex items-center space-x-1 whitespace-nowrap nav-link"
           >
             <span>Next</span>
             <ChevronRight size={24} />
