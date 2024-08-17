@@ -5,7 +5,8 @@ This project expands upon the official [blog-starter](https://github.com/vercel/
 Major differences include:
 
 - Support for multiple content types (pages, posts, and tags)
-- Support for frontmatter and shortcodes
+- Frontmatter and shortcodes that allow for embedding components
+- Search content with [Fuse.js](https://fusejs.io/)
 
 Content is stored in `public/content/[contentType]`, e.g. `public/content/posts`, `public/content/pages`, and `public/content/tags`. Each piece of content has its own directory with an `index.md` file and any associated assets.
 
