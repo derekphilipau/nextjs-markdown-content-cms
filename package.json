@@ -8,8 +8,10 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
+    "@radix-ui/react-dialog": "^1.1.1",
     "classnames": "^2.5.1",
     "date-fns": "^3.6.0",
+    "embla-carousel-react": "^8.1.8",
     "fuse.js": "^7.0.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.427.0",

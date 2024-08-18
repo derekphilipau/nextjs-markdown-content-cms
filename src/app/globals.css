@@ -122,4 +122,17 @@
   a.nav-link.active {
     @apply text-neutral-800 dark:text-neutral-200;
   }
+
+  .embla {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+  }
+
+  .embla__slide {
+    flex: 0 0 70%;
+    min-width: 0;
+  }
 }
