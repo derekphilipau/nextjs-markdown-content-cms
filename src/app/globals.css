@@ -104,7 +104,7 @@
   }
 
   .text-tagline {
-    @apply text-sm md:text-base text-muted-foreground;
+    @apply italic text-sm md:text-base text-muted-foreground;
   }
 
   .nav-link {

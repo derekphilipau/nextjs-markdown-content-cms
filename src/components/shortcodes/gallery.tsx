@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
 interface GalleryProps {
   content: string;
@@ -49,7 +49,7 @@ const Gallery: React.FC<GalleryProps> = ({ content }) => {
         {images.map(([_, src, alt], index) => (
           <div
             key={index}
-            className={`cursor-pointer ${
+            className={`cursor-pointer relative group ${
               images.length === 1 ? "w-1/2" : "w-full"
             }`}
             onClick={() => {
@@ -62,6 +62,9 @@ const Gallery: React.FC<GalleryProps> = ({ content }) => {
               alt={alt}
               className="w-full h-auto object-cover !my-0"
             />
+            <div className="absolute bottom-2 right-2 bg-white/50 group-hover:bg-white dark:bg-black/50 dark:group-hover:bg-black rounded-full p-2">
+              <ZoomIn className="w-5 h-5" />
+            </div>
           </div>
         ))}
       </div>
