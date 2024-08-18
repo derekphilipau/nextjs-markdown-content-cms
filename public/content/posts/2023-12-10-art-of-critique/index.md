@@ -6,8 +6,6 @@ coverImage: ./images/design-critique.webp
 excerpt: Exploring effective strategies for providing constructive design feedback and gracefully handling criticism of your own work.
 ---
 
-# The Art of Critique: Giving and Receiving Design Feedback
-
 As designers, critique is an essential part of our process. It helps us grow, refine our work, and see our designs from new perspectives. Yet, both giving and receiving feedback can be challenging. Today, let's explore how to master the art of design critique.
 
 ## The Importance of Effective Critique

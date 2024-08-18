@@ -6,8 +6,6 @@ coverImage: ./images/sustainable-design.webp
 excerpt: Exploring how designers can contribute to environmental sustainability through thoughtful digital practices.
 ---
 
-# Sustainable Design: Creating a Greener Digital World
-
 As designers, we have the power to shape not just how things look, but how they impact the world around us. With growing concern about climate change and environmental issues, it's crucial that we consider sustainability in our digital design practices. Today, let's explore how we can create a greener digital world through sustainable design.
 
 ## Understanding Digital Sustainability

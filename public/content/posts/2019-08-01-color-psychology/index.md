@@ -6,8 +6,6 @@ coverImage: ./images/color-psychology.webp
 excerpt: Exploring how color choices can influence brand perception and consumer behavior.
 ---
 
-# The Art of Color Psychology in Branding
-
 As a designer, one of the most powerful tools in my arsenal is color. It's not just about making things look pretty – color has the ability to evoke emotions, influence perceptions, and even drive behavior. Today, let's dive into the fascinating world of color psychology in branding.
 
 ## The Emotional Palette

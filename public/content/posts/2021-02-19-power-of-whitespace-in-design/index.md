@@ -6,8 +6,6 @@ coverImage: ./images/whitespace.webp
 excerpt: Exploring how negative space can elevate your designs and create visual impact.
 ---
 
-# The Power of Whitespace in Design
-
 As a designer, I've always been fascinated by the impact of what's not there. Whitespace, also known as negative space, is a powerful tool that can transform a cluttered design into a masterpiece of clarity and elegance.
 
 ## What is Whitespace?

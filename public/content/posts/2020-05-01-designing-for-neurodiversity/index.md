@@ -6,8 +6,6 @@ coverImage: ./images/neurodiversity-design.webp
 excerpt: Exploring how to create digital experiences that are accessible and enjoyable for neurodivergent users.
 ---
 
-# Designing for Neurodiversity: Creating Inclusive Digital Experiences
-
 As designers, our goal is to create experiences that work for everyone. Yet, traditionally, design has often catered to neurotypical users, potentially excluding those who are neurodivergent. Today, let's explore how we can design more inclusive digital experiences that accommodate neurodiversity.
 
 ## Understanding Neurodiversity

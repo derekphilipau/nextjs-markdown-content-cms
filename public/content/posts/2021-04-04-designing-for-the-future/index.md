@@ -6,8 +6,6 @@ coverImage: ./images/ar-vr-design.webp
 excerpt: Exploring the exciting challenges and opportunities in designing user interfaces for augmented and virtual reality.
 ---
 
-# Designing for the Future: Embracing AR and VR in User Interfaces
-
 As a designer always looking to push boundaries, I've been fascinated by the rise of Augmented Reality (AR) and Virtual Reality (VR) technologies. These immersive experiences are not just changing how we interact with digital content – they're fundamentally altering our understanding of what a "user interface" can be. Today, let's explore the exciting world of designing for AR and VR.
 
 ## A New Dimension of Design

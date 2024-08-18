@@ -8,7 +8,7 @@ type ContentHeaderProps = {
 };
 
 export function ContentHeader({ content }: ContentHeaderProps) {
-  const { contentType, title, coverImage, date, slug } = content;
+  const { title, coverImage, date } = content;
   return (
     <>
       <ContentTitle>{title}</ContentTitle>

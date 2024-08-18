@@ -6,8 +6,6 @@ coverImage: ./images/ai-in-design.webp
 excerpt: Exploring the impact of AI tools on the design industry, their potential applications, and the ethical questions they raise.
 ---
 
-# The Renaissance of Generative AI in Design: Opportunities and Ethical Considerations
-
 As a designer who's always been fascinated by the intersection of technology and creativity, I've been closely following the rapid advancements in generative AI. These tools are not just changing how we create; they're challenging our very understanding of the creative process. Today, let's dive into the world of AI in design, exploring its potential and the ethical questions it raises.
 
 ## The AI Design Revolution

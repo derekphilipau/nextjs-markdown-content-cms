@@ -6,8 +6,6 @@ coverImage: ./images/ux-storytelling.webp
 excerpt: Exploring how narrative techniques can enhance user engagement and create more meaningful digital experiences.
 ---
 
-# The Power of Storytelling in User Experience Design
-
 As designers, we're not just creating interfaces; we're crafting experiences. And what better way to create a compelling experience than through the art of storytelling? Today, let's explore how we can harness the power of narrative to create more engaging, intuitive, and meaningful user experiences.
 
 ## Why Storytelling Matters in UX

@@ -41,11 +41,17 @@ const Gallery: React.FC<GalleryProps> = ({ content }) => {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-6">
+      <div
+        className={`grid gap-6 ${
+          images.length === 1 ? "grid-cols-1 place-items-center" : "grid-cols-2"
+        }`}
+      >
         {images.map(([_, src, alt], index) => (
           <div
             key={index}
-            className="w-full cursor-pointer"
+            className={`cursor-pointer ${
+              images.length === 1 ? "w-1/2" : "w-full"
+            }`}
             onClick={() => {
               setSelectedIndex(index);
               setOpen(true);
@@ -81,7 +87,7 @@ const Gallery: React.FC<GalleryProps> = ({ content }) => {
                   ))}
                 </div>
               </div>
-              <div className="absolute bottom-4 left-4 flex space-x-2">
+              <div className="absolute bottom-4 left-4 flex space-x-3">
                 <button
                   className="bg-black/50 hover:bg-black rounded-full p-2"
                   onClick={scrollPrev}
@@ -94,15 +100,16 @@ const Gallery: React.FC<GalleryProps> = ({ content }) => {
                 >
                   <ChevronRight className="w-8 h-8 text-white" />
                 </button>
+                <Dialog.Close asChild>
+                  <button
+                    className="text-white bg-black/50 hover:bg-black rounded-full py-2 px-4 z-10 flex items-center"
+                    aria-label="Close"
+                  >
+                    <span className="mr-1 text-xl">Close</span>
+                    <X className="w-8 h-8" />
+                  </button>
+                </Dialog.Close>
               </div>
-              <Dialog.Close asChild>
-                <button
-                  className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black rounded-full p-2 z-10"
-                  aria-label="Close"
-                >
-                  <X className="w-8 h-8" />
-                </button>
-              </Dialog.Close>
             </div>
           </Dialog.Content>
         </Dialog.Portal>

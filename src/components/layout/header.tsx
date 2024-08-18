@@ -13,7 +13,7 @@ export function Header() {
   ];
 
   return (
-    <header className="container max-w-7xl mx-auto px-5 flex flex-wrap items-center justify-between gap-y-4 mb-8 md:mb-12 mt-4 md:mt-8">
+    <header className="container max-w-7xl mx-auto px-5 flex flex-wrap items-center justify-between gap-y-4 gap-x-6 mb-8 md:mb-12 mt-4 md:mt-8">
       <div className="flex flex-col gap-y-2">
         <h2 className="h2-header">
           <Link href="/" className="nav-link">

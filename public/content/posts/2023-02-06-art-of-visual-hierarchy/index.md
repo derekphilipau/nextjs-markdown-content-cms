@@ -6,8 +6,6 @@ coverImage: ./images/visual-hierarchy.webp
 excerpt: Exploring techniques to create effective visual hierarchies that enhance user experience and information retention.
 ---
 
-# The Art of Visual Hierarchy: Guiding the User's Eye
-
 As designers, one of our primary goals is to communicate information effectively. A key tool in achieving this is visual hierarchy – the arrangement and design of elements to show their order of importance. Today, let's explore how we can use visual hierarchy to guide the user's eye and create more impactful designs.
 
 ## Why Visual Hierarchy Matters

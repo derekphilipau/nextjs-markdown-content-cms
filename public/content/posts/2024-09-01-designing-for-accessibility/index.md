@@ -6,8 +6,6 @@ coverImage: ./images/accessibility.webp
 excerpt: Exploring the multifaceted approach to creating designs that are truly accessible to all users.
 ---
 
-# Designing for Accessibility: It's More Than Just Color Contrast
-
 As designers, we have the power and responsibility to create experiences that are accessible to everyone. While color contrast is often the first thing that comes to mind when we think about accessible design, it's just the tip of the iceberg.
 
 ## Beyond Color Contrast

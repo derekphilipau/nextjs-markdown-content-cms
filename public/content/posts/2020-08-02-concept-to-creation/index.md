@@ -6,8 +6,6 @@ coverImage: ./images/illustration-process.webp
 excerpt: A behind-the-scenes look at how I bring illustrations to life, from initial idea to final product.
 ---
 
-# From Concept to Creation: My Illustration Process
-
 One of the questions I'm often asked is, "How do you create your illustrations?" Today, I'm pulling back the curtain on my creative process. Whether you're a fellow illustrator or just curious about how digital art comes to life, I hope you'll find this peek behind the scenes interesting!
 
 ## Step 1: Ideation

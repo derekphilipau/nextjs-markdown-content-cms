@@ -6,8 +6,6 @@ coverImage: ./images/hand-drawn-digital.webp
 excerpt: Exploring how incorporating hand-drawn elements can add warmth and personality to digital designs.
 ---
 
-# Embracing Imperfection: The Beauty of Hand-Drawn Elements in Digital Design
-
 In a world of pixel-perfect vectors and flawless gradients, there's something refreshingly human about a hand-drawn line. As a designer who straddles both digital and traditional mediums, I've found that incorporating hand-drawn elements into digital designs can add a touch of warmth, personality, and authenticity that's often missing from purely digital creations.
 
 ## The Appeal of the Imperfect
