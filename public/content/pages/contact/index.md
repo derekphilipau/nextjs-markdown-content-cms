@@ -6,9 +6,7 @@ excerpt: Get in touch with Lumi Thorne for your design and illustration needs.
 form: contact-form
 ---
 
-# Contact Lumi
-
-We'd love to hear from you! Feel free to reach out using the form below.
+I'd love to hear from you! Feel free to reach out using the form below.
 
 # Get in Touch
 

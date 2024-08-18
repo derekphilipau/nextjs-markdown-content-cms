@@ -5,8 +5,6 @@ coverImage: ./images/testimonials.webp
 excerpt: Hear what clients have to say about working with Lumi Thorne on various design projects.
 ---
 
-# Client Testimonials
-
 Don't just take my word for it. Here's what some of my clients have to say about our collaborations:
 
 ## Brand Identity Design
