@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getContentBySlug, getContent, getAllTags } from "@/lib/api/content";
+import { getContentBySlug, getContent } from "@/lib/api/content";
 import { Container } from "@/components/layout/container";
 import { ContentHeader } from "@/components/content/content-header";
 import { ContentBody } from "@/components/content/content-body";
@@ -8,12 +8,13 @@ import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 type PageParams = {
   params: {
-    page: string;
+    slug: string[];
   };
 };
 
 export default async function Page({ params }: PageParams) {
-  const content = await getContentBySlug("page", params.page);
+  const slug = params.slug ? params.slug.join("/") : "index";
+  const content = await getContentBySlug("page", slug);
 
   if (!content) {
     return notFound();
@@ -32,7 +33,8 @@ export default async function Page({ params }: PageParams) {
 export async function generateMetadata({
   params,
 }: PageParams): Promise<Metadata> {
-  const content = await getContentBySlug("page", params.page);
+  const slug = params.slug ? params.slug.join("/") : "index";
+  const content = await getContentBySlug("page", slug);
   const dict = getDictionary();
 
   if (!content) {
@@ -57,6 +59,6 @@ export async function generateStaticParams() {
   const response = await getContent({ contentType: "page" });
 
   return response.results.map((page) => ({
-    page: page.slug,
+    slug: page.slug.split("/"),
   }));
 }

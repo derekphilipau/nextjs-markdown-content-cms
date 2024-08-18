@@ -22,34 +22,51 @@ export function getContentDirectory(contentType: ContentType) {
   return path.join(CONTENT_DIRECTORY, slug);
 }
 
+function getContentFiles(directory: string): string[] {
+  const files: string[] = [];
+
+  function traverseDirectory(currentPath: string) {
+    const items = fs.readdirSync(currentPath);
+    for (const item of items) {
+      const fullPath = path.join(currentPath, item);
+      if (fs.statSync(fullPath).isDirectory()) {
+        traverseDirectory(fullPath);
+      } else if (item === "index.md") {
+        files.push(fullPath);
+      }
+    }
+  }
+
+  traverseDirectory(directory);
+  return files;
+}
+
 function readContentFile(
   contentType: ContentType,
   slug: string
 ): string | null {
   const directory = getContentDirectory(contentType);
-  const mdPath = path.join(directory, slug, "index.md");
+  const mdPath = path.join(directory, ...slug.split("/"), "index.md");
 
-  let fullPath: string;
   if (fs.existsSync(mdPath)) {
-    fullPath = mdPath;
+    try {
+      return fs.readFileSync(mdPath, "utf8");
+    } catch (error) {
+      console.error(`Error reading file ${mdPath}:`, error);
+      return null;
+    }
   } else {
     console.error(`No .md file found for slug: ${slug}`);
     return null;
   }
-
-  try {
-    return fs.readFileSync(fullPath, "utf8");
-  } catch (error) {
-    console.error(`Error reading file ${fullPath}:`, error);
-    return null;
-  }
 }
 
-export function getContentSlugs(contentType: ContentType) {
+export function getContentSlugs(contentType: ContentType): string[] {
   const directory = getContentDirectory(contentType);
-  return fs
-    .readdirSync(directory)
-    .filter((file) => fs.statSync(path.join(directory, file)).isDirectory());
+  const files = getContentFiles(directory);
+  return files.map((file) =>
+    path.relative(directory, file).replace(/\/index\.md$/, "")
+  );
 }
 
 export async function getContentBySlug(
