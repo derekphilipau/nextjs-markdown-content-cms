@@ -28,7 +28,10 @@ export function ContentList({
       <div className="content-grid">
         {items.map((content) => (
           <div className={content.isHighlighted ? "col-span-full" : ""}>
-            <ContentPreview content={content} />
+            <ContentPreview
+              content={content}
+              size={content.isHighlighted ? "large" : "small"}
+            />
           </div>
         ))}
       </div>

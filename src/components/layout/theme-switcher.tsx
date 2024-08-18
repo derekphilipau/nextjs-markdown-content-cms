@@ -90,7 +90,13 @@ const Switch = () => {
   }
 
   return (
-    <button onClick={handleModeSwitch} className="nav-link">
+    <button
+      onClick={handleModeSwitch}
+      className="nav-link"
+      aria-label={`Switch to ${mode === "dark" ? "light" : "dark"} mode`}
+      aria-pressed={mode === "dark"}
+      role="switch"
+    >
       {mode === "dark" ? <Moon /> : <Sun />}
     </button>
   );

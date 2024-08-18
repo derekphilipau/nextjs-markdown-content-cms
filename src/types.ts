@@ -5,9 +5,9 @@ export type SiteContentType = {
 };
 
 export type SiteNavigationItem = {
-  title?: string;
-  icon?: string;
+  title: string;
   slug: string;
+  icon?: string;
 };
 
 export type SiteConfig = {

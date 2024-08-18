@@ -7,7 +7,7 @@ import Link from "next/link";
 export function Footer() {
   const dict = getDictionary();
   return (
-    <footer className="border-t border-secondary mt-12">
+    <footer className="bg-secondary mt-12">
       <Container>
         <div className="py-12 flex flex-col lg:flex-row items-center gap-3">
           <div className="text-center lg:text-left">

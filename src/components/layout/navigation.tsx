@@ -34,6 +34,7 @@ export function Navigation({ items, style }: NavigationProps) {
             href={item.slug}
             className={`nav-link flex items-center ${isActive ? "active" : ""}`}
             aria-current={isActive ? "page" : undefined}
+            aria-label={item.title}
           >
             {item.icon && Icon ? (
               <>

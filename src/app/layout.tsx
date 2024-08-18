@@ -1,17 +1,14 @@
 import Footer from "@/components/layout/footer";
 import { siteConfig } from "@/siteConfig";
 import type { Metadata } from "next";
-import {
-  EB_Garamond as SerifFont,
-  Inter as SansSerifFont,
-} from "next/font/google";
+import { EB_Garamond as SiteFont } from "next/font/google";
 import cn from "classnames";
 import { Header } from "@/components/layout/header";
 import { getDictionary } from "../lib/dictionaries/dictionaries";
 
 import "./globals.css";
 
-const siteFont = SansSerifFont({
+const siteFont = SiteFont({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });

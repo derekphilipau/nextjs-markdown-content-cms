@@ -15,7 +15,7 @@ export function Pagination({ pagination, basePath }: PaginationProps) {
       <div className="text-lg text-muted-foreground">
         {total} items • Page {currentPage} of {totalPages}
       </div>
-      <div className="flex justify-between gap-x-4 md:gap-x-8 w-full sm:w-auto text-lg">
+      <div className="flex justify-between gap-x-4 md:gap-x-8 w-full sm:w-auto text-xl">
         {currentPage > 1 && (
           <Link
             href={`${basePath}?page=${currentPage - 1}`}

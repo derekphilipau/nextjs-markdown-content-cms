@@ -24,7 +24,7 @@ export function Header() {
       </div>
       <Navigation items={combinedNavItems} style="primary" />
       <div className="flex items-center gap-x-2 sm:gap-x-4">
-        <Link href="/search" className="nav-link">
+        <Link href="/search" className="nav-link" aria-label="Search">
           <Search size={24} />
           <span className="sr-only">Search</span>
         </Link>

@@ -37,18 +37,22 @@ export const siteConfig: SiteConfig = {
   ],
   secondaryNavigation: [
     {
+      title: "Instagram",
       icon: "Instagram",
       slug: "https://instagram.com/" + instagram,
     },
     {
+      title: "Github",
       icon: "Github",
       slug: "https://github.com/" + github,
     },
     {
+      title: "Linkedin",
       icon: "Linkedin",
       slug: "https://linkedin.com/in/" + linkedin,
     },
     {
+      title: "Dribbble",
       icon: "Dribbble",
       slug: "https://dribbble.com/" + dribbble,
     },
