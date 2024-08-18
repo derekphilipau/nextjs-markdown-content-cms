@@ -1,16 +1,19 @@
 import Footer from "@/components/layout/footer";
 import { siteConfig } from "@/siteConfig";
 import type { Metadata } from "next";
-import { Cormorant_Garamond } from "next/font/google";
+import {
+  EB_Garamond as SerifFont,
+  Inter as SansSerifFont,
+} from "next/font/google";
 import cn from "classnames";
 import { Header } from "@/components/layout/header";
 import { getDictionary } from "../lib/dictionaries/dictionaries";
 
 import "./globals.css";
 
-const cormorantGaramond = Cormorant_Garamond({
+const siteFont = SansSerifFont({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const dict = getDictionary();
@@ -63,12 +66,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body
-        className={cn(
-          cormorantGaramond.className,
-          "bg-background text-foreground"
-        )}
-      >
+      <body className={cn(siteFont.className, "bg-background text-foreground")}>
         <Header />
         <div className="min-h-screen">{children}</div>
         <Footer />

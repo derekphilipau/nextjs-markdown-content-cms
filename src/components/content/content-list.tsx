@@ -21,7 +21,7 @@ export function ContentList({
   return (
     <section className="py-6">
       {showTitle && (
-        <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+        <h2 className="mb-8 h2-heading">
           {dict.contentTypes[contentType].plural}
         </h2>
       )}

@@ -27,9 +27,7 @@ export default async function TagPage({ params }: Params) {
   return (
     <main>
       <Container>
-        <h1 className="text-3xl font-bold mb-8">
-          Posts tagged with "{params.tag}"
-        </h1>
+        <h1 className="h1-heading mb-8">Posts tagged with "{params.tag}"</h1>
         {tagContent?.htmlContent && (
           <div
             className="mb-8 prose prose-lg lg:prose-2xl dark:prose-invert"

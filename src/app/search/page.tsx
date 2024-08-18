@@ -12,7 +12,7 @@ export default function SearchPage({
   return (
     <main>
       <Container>
-        <h1 className="h1-header">Search</h1>
+        <h1 className="h1-heading">Search</h1>
         <SearchForm initialQuery={query} />
         <SearchResults query={query} />
       </Container>

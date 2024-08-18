@@ -8,9 +8,7 @@ export default async function TagsIndex() {
   return (
     <main>
       <Container>
-        <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
-          Tags
-        </h2>
+        <h2 className="h2-heading">Tags</h2>
         <div className="content-grid">
           {allTags.map((tag) => (
             <Link key={tag} href={`/tags/${tag}`}>

@@ -105,8 +105,8 @@ const Gallery: React.FC<GalleryProps> = ({ content }) => {
                     className="text-white bg-black/50 hover:bg-black rounded-full py-2 px-4 z-10 flex items-center"
                     aria-label="Close"
                   >
-                    <span className="mr-1 text-xl">Close</span>
                     <X className="w-8 h-8" />
+                    <span className="ml-2 text-xl">Close</span>
                   </button>
                 </Dialog.Close>
               </div>

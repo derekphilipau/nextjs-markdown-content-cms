@@ -5,5 +5,5 @@ type ContentTitleProps = {
 };
 
 export function ContentTitle({ children }: ContentTitleProps) {
-  return <h1 className="h1-header pb-4">{children}</h1>;
+  return <h1 className="h1-heading pb-4">{children}</h1>;
 }

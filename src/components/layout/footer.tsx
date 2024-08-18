@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="border-t border-secondary mt-12">
       <Container>
         <div className="py-12 flex flex-col lg:flex-row items-center gap-3">
-          <h3 className="h3-header text-nowrap">
+          <h3 className="h3-heading text-nowrap">
             <Link href="/" className="nav-link">
               {dict.site.title}
             </Link>
