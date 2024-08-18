@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/container";
 import { ContentHeader } from "@/components/content/content-header";
 import { ContentBody } from "@/components/content/content-body";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
+import { ContentBreadcrumbs } from "@/components/content/content-breadcrumbs";
 
 type PageParams = {
   params: {
@@ -23,6 +24,7 @@ export default async function Page({ params }: PageParams) {
   return (
     <main>
       <Container>
+        <ContentBreadcrumbs path={params.slug || []} />
         <ContentHeader content={content} />
         <ContentBody content={content} />
       </Container>
