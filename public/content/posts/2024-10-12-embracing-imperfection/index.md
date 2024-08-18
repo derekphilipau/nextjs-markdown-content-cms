@@ -28,7 +28,11 @@ The magic happens when you combine the precision and scalability of digital desi
 
 ## My Process for Integrating Hand-Drawn Elements
 
+[gallery]
 ![My process for integrating hand-drawn elements](./images/process.webp)
+![My process for integrating hand-drawn elements](./images/process.webp)
+![My process for integrating hand-drawn elements](./images/process.webp)
+[/gallery]
 
 1. **Sketch First**: I always start on paper. This allows for a more natural, uninhibited creative process.
 2. **Scan or Photograph**: High resolution is key here. I often increase the contrast to make digitizing easier.
@@ -37,6 +41,10 @@ The magic happens when you combine the precision and scalability of digital desi
 5. **Integrate**: Thoughtfully incorporate the hand-drawn elements into the digital design, considering balance and visual hierarchy.
 
 ## The Balancing Act
+
+[gallery]
+![My process for integrating hand-drawn elements](./images/process.webp)
+[/gallery]
 
 The key is to find the right balance. Too many hand-drawn elements can make a design feel cluttered or unprofessional. Used judiciously, however, they can add just the right amount of personality and warmth.
 

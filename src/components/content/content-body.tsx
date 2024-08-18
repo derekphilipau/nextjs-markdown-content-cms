@@ -8,9 +8,9 @@ type ContentBodyProps = {
 };
 
 export function ContentBody({ content }: ContentBodyProps) {
-  if (!content) return null;
+  if (!content?.htmlContent) return null;
   return (
-    <article className="max-w-2xl mx-auto prose prose-lg lg:prose-2xl dark:prose-invert">
+    <article className="max-w-3xl mx-auto prose prose-lg lg:prose-2xl dark:prose-invert">
       <ContentRenderer htmlContent={content.htmlContent} />
     </article>
   );

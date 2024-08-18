@@ -12,7 +12,7 @@ export default function ContactForm() {
     );
   }
   return (
-    <div className="py-6 max-w-2xl mx-auto">
+    <div className="py-6 max-w-3xl mx-auto">
       <h2 className="text-3xl mb-8">Contact Me</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
