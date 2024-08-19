@@ -1,7 +1,7 @@
 ---
 title: "About Lumi"
 author: "Lumi Thorne"
-coverImage: ./images/about.webp
+coverImage: ./images/placeholder-4x3.webp
 excerpt:
 form: contact-form
 ---

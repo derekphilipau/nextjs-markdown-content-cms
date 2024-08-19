@@ -2,7 +2,7 @@
 title: "Ceramics"
 author: "Derek Au"
 date: 2020-03-28
-coverImage: ./images/DSC00242-Edit.jpg
+coverImage: ./images/placeholder-4x3.webp
 tags: ["ceramics", "art", "pottery"]
 excerpt:
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Client Testimonials"
 author: "Lumi Thorne"
-coverImage: ./images/testimonials.webp
+coverImage: ./images/placeholder-4x3.webp
 excerpt: Hear what clients have to say about working with Lumi Thorne on various design projects.
 ---
 

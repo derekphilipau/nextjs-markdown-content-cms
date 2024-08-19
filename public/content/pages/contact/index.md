@@ -1,7 +1,7 @@
 ---
 title: "Contact Lumi"
 author: "Lumi Thorne"
-coverImage: ./images/contact.webp
+coverImage: ./images/placeholder-4x3.webp
 excerpt: Get in touch with Lumi Thorne for your design and illustration needs.
 form: contact-form
 ---

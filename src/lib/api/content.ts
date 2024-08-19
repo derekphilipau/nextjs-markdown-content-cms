@@ -83,8 +83,8 @@ export async function getContentBySlug(
     .use(remarkParse)
     .use(() => (tree) => {
       // MD files may contain relatively linked images, e.g.:
-      // ![My image](./images/my_image.webp)
-      // Transform to: /content/posts/my-post/images/my_image.webp
+      // ![My image](./images/placeholder-4x3.webp)
+      // Transform to: /content/posts/my-post/images/placeholder-4x3.webp
       visit(tree, "image", (node: Image) => {
         if (node.url && node.url.startsWith("./")) {
           node.url = `/content/${

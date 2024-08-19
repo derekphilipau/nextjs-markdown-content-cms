@@ -32,7 +32,7 @@ export const siteConfig: SiteConfig = {
     },
     {
       title: "Blog",
-      slug: "/blog",
+      slug: "/posts",
     },
     {
       title: "About",
