@@ -39,7 +39,14 @@ export type Content = {
     url: string;
   };
   htmlContent?: string;
+  contentChunks?: ContentChunk[];
   isHighlighted?: boolean;
+};
+
+export type ContentChunk = {
+  type: "text" | "component" | "gallery" | "content";
+  content?: string;
+  params?: Record<string, string>;
 };
 
 export type ContentRequest = {

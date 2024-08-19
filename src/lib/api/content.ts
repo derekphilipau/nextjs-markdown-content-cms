@@ -3,6 +3,7 @@ import type {
   ContentResponse,
   Content,
   ContentType,
+  ContentChunk,
 } from "@/types";
 import fs from "fs";
 import matter from "gray-matter";
@@ -107,10 +108,13 @@ export async function getContentBySlug(
     isHighlighted,
   } = data;
 
+  const contentChunks = parseContent(htmlContent);
+
   return {
     contentType,
     slug,
     htmlContent,
+    contentChunks,
     title,
     date,
     coverImage,
@@ -120,6 +124,60 @@ export async function getContentBySlug(
     ogImage,
     isHighlighted,
   } as Content;
+}
+
+function parseContent(content: string): ContentChunk[] {
+  const chunks: ContentChunk[] = [];
+  const regex = /\[(component|content):(\s*[^\]]+)?\]/g;
+  let match;
+
+  while ((match = regex.exec(content)) !== null) {
+    const [fullMatch, shortcodeType, paramsString] = match;
+    const start = match.index;
+    const end = start + fullMatch.length;
+
+    if (start > 0) {
+      chunks.push({ type: "text", content: content.slice(0, start).trim() });
+    }
+
+    if (shortcodeType === "component") {
+      const [componentName, ...componentParams] = paramsString
+        .split(",")
+        .map((p) => p.trim());
+      const params: Record<string, string> = {};
+      componentParams.forEach((param) => {
+        const [key, value] = param.split("=").map((p) => p.trim());
+        params[key] = value;
+      });
+      chunks.push({
+        type: "component",
+        content: componentName,
+        params,
+      });
+    } else if (shortcodeType === "content") {
+      const params: Record<string, string> = {};
+      if (paramsString) {
+        paramsString.split(",").forEach((param) => {
+          const [key, value] = param
+            .trim()
+            .split("=")
+            .map((p) => p.trim());
+          params[key] = value;
+        });
+      }
+      chunks.push({
+        type: "content",
+        params,
+      });
+    }
+    content = content.slice(end);
+  }
+
+  if (content.trim()) {
+    chunks.push({ type: "text", content: content.trim() });
+  }
+
+  return chunks;
 }
 
 export async function getContent({
