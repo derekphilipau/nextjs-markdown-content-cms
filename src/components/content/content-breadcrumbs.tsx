@@ -12,21 +12,18 @@ export function ContentBreadcrumbs({ path }: ContentBreadcrumbsProps) {
     return { href, label };
   });
 
+  if (breadcrumbs.length === 0) return null;
+
   return (
     <nav aria-label="Breadcrumb">
       <ol className="flex space-x-2 text-base pb-2">
-        <li>
-          <Link href="/" className="">
-            Home
-          </Link>
-        </li>
         {breadcrumbs.map((crumb, index) => (
           <li key={crumb.href} className="flex items-center">
-            <span className="text-gray-500">/</span>
+            {index > 0 && <span className="text-gray-500">/</span>}
             {index === breadcrumbs.length - 1 ? (
               <span className="text-gray-900 ml-2">{crumb.label}</span>
             ) : (
-              <Link href={crumb.href} className="ml-2">
+              <Link href={crumb.href} className={index === 0 ? "" : "ml-2"}>
                 {crumb.label}
               </Link>
             )}
