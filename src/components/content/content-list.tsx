@@ -3,6 +3,7 @@ import { ContentPreview } from "./content-preview";
 import { Pagination } from "../layout/pagination";
 import type { Pagination as PaginationType, ContentType } from "@/types";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
+import { siteConfig } from "@/siteConfig";
 
 type ContentListProps = {
   contentType?: ContentType;
@@ -19,6 +20,7 @@ export function ContentList({
 }: ContentListProps) {
   if (!items || items.length === 0 || !contentType) return null;
   const dict = getDictionary();
+  const contentTypeSlug = siteConfig.contentTypes[contentType].slug;
   return (
     <section className="">
       {showTitle && (
@@ -34,7 +36,7 @@ export function ContentList({
           </div>
         ))}
       </div>
-      <Pagination pagination={pagination} basePath="/blog" />
+      <Pagination pagination={pagination} basePath={`/${contentTypeSlug}`} />
     </section>
   );
 }
