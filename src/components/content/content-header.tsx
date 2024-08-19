@@ -11,7 +11,7 @@ export function ContentHeader({ content }: ContentHeaderProps) {
   const { title, coverImage, date } = content;
   return (
     <>
-      <ContentTitle>{title}</ContentTitle>
+      {title && <ContentTitle>{title}</ContentTitle>}
       {date && (
         <div className="mb-6 text-2xl">
           <DateFormatter dateString={date} />

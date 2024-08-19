@@ -4,11 +4,12 @@ import type { Pagination } from "@/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface PaginationProps {
-  pagination: Pagination;
+  pagination?: Pagination;
   basePath: string;
 }
 
 export function Pagination({ pagination, basePath }: PaginationProps) {
+  if (!pagination) return null;
   const { total, totalPages, currentPage, pageSize } = pagination;
   return (
     <div className="flex flex-wrap gap-y-4 items-center justify-between mt-8">

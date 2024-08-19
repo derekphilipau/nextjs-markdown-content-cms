@@ -1,7 +1,7 @@
 export function resolveImagePath(
   contentTypeSlug: string,
   slug: string,
-  imagePath: string
+  imagePath?: string
 ): string {
   if (!imagePath) {
     return "";

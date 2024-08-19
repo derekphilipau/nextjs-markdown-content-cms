@@ -108,7 +108,7 @@ export async function getContentBySlug(
     isHighlighted,
   } = data;
 
-  const contentChunks = parseContent(htmlContent);
+  const contentChunks = await parseContent(htmlContent);
 
   return {
     contentType,
@@ -126,18 +126,22 @@ export async function getContentBySlug(
   } as Content;
 }
 
-function parseContent(content: string): ContentChunk[] {
+export async function parseContent(content: string): Promise<ContentChunk[]> {
   const chunks: ContentChunk[] = [];
   const regex = /\[(component|content):(\s*[^\]]+)?\]/g;
-  let match;
+  let lastIndex = 0;
 
+  let match;
   while ((match = regex.exec(content)) !== null) {
     const [fullMatch, shortcodeType, paramsString] = match;
-    const start = match.index;
+    const start = match.index!;
     const end = start + fullMatch.length;
 
-    if (start > 0) {
-      chunks.push({ type: "text", content: content.slice(0, start).trim() });
+    if (start > lastIndex) {
+      chunks.push({
+        type: "text",
+        content: content.slice(lastIndex, start).trim(),
+      });
     }
 
     if (shortcodeType === "component") {
@@ -165,16 +169,28 @@ function parseContent(content: string): ContentChunk[] {
           params[key] = value;
         });
       }
+
+      const contentRequest: Partial<ContentRequest> = {
+        contentType: params.type as ContentType,
+        tag: params.tag,
+        page: params.page ? parseInt(params.page, 10) : undefined,
+        limit: params.limit ? parseInt(params.limit, 10) : undefined,
+      };
+
+      const contentData = await getContent(contentRequest);
+
       chunks.push({
         type: "content",
         params,
+        data: contentData,
       });
     }
-    content = content.slice(end);
+
+    lastIndex = end;
   }
 
-  if (content.trim()) {
-    chunks.push({ type: "text", content: content.trim() });
+  if (lastIndex < content.length) {
+    chunks.push({ type: "text", content: content.slice(lastIndex).trim() });
   }
 
   return chunks;
@@ -197,7 +213,7 @@ export async function getContent({
     ? allContent.filter((item) => item.tags?.includes(tag))
     : allContent;
 
-  filteredContent.sort((a, b) => b.date?.localeCompare(a.date));
+  filteredContent.sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
 
   const total = filteredContent.length;
   const totalPages = Math.ceil(total / limit);

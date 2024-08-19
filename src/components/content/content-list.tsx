@@ -5,9 +5,9 @@ import type { Pagination as PaginationType, ContentType } from "@/types";
 import { getDictionary } from "@/lib/dictionaries/dictionaries";
 
 type ContentListProps = {
-  contentType: ContentType;
-  items: Content[];
-  pagination: PaginationType;
+  contentType?: ContentType;
+  items?: Content[];
+  pagination?: PaginationType;
   showTitle?: boolean;
 };
 
@@ -17,13 +17,12 @@ export function ContentList({
   pagination,
   showTitle = false,
 }: ContentListProps) {
+  if (!items || items.length === 0 || !contentType) return null;
   const dict = getDictionary();
   return (
-    <section className="py-6">
+    <section className="">
       {showTitle && (
-        <h2 className="mb-8 h2-heading">
-          {dict.contentTypes[contentType].plural}
-        </h2>
+        <h2 className="h2-heading">{dict.contentTypes[contentType].plural}</h2>
       )}
       <div className="content-grid">
         {items.map((content) => (
@@ -35,7 +34,7 @@ export function ContentList({
           </div>
         ))}
       </div>
-      <Pagination pagination={pagination} basePath="/" />
+      <Pagination pagination={pagination} basePath="/blog" />
     </section>
   );
 }

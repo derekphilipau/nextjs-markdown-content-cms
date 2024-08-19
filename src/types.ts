@@ -29,13 +29,13 @@ export type Author = {
 export type Content = {
   contentType: ContentType;
   slug: string;
-  title: string;
-  date: string;
-  coverImage: string;
-  author: Author;
-  tags: string[];
-  excerpt: string;
-  ogImage: {
+  title?: string;
+  date?: string;
+  coverImage?: string;
+  author?: Author;
+  tags?: string[];
+  excerpt?: string;
+  ogImage?: {
     url: string;
   };
   htmlContent?: string;
@@ -47,6 +47,7 @@ export type ContentChunk = {
   type: "text" | "component" | "gallery" | "content";
   content?: string;
   params?: Record<string, string>;
+  data?: ContentResponse;
 };
 
 export type ContentRequest = {

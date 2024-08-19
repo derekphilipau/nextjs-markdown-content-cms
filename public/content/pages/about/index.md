@@ -41,7 +41,3 @@ Here's what some of my clients have to say:
 ## Let's Create Together
 
 Whether you're looking to refresh your brand, need custom illustrations, or want to improve your product's user experience, I'd love to hear from you. Let's bring your ideas to life!
-
----
-
-Feel free to reach out at lumi@example.com or follow my work on [Instagram](https://www.instagram.com/lumithornedesign) and [Behance](https://www.behance.net/lumithorne).

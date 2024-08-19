@@ -31,6 +31,10 @@ export const siteConfig: SiteConfig = {
       slug: "/portfolio",
     },
     {
+      title: "Blog",
+      slug: "/blog",
+    },
+    {
       title: "About",
       slug: "/about",
     },

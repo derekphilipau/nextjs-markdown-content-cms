@@ -7,12 +7,12 @@ import { siteConfig } from "../siteConfig";
 
 type SearchIndexItem = {
   contentType: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  coverImage: string;
-  tags: string[];
-  htmlContent: string;
+  slug?: string;
+  title?: string;
+  excerpt?: string;
+  coverImage?: string;
+  tags?: string[];
+  htmlContent?: string;
 };
 
 async function generateSearchIndex() {
