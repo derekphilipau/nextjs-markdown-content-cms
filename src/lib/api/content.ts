@@ -3,7 +3,6 @@ import type {
   ContentResponse,
   Content,
   ContentType,
-  ContentChunk,
 } from "@/types";
 import { siteConfig } from "@/siteConfig";
 import {
@@ -11,6 +10,7 @@ import {
   getMarkdownFilePaths,
   processMarkdown,
 } from "./markdown";
+import { processContentChunks } from "./shortcode";
 
 export async function getContentBySlug(
   contentType: ContentType,
@@ -29,78 +29,6 @@ export async function getContentBySlug(
     contentChunks,
     ...data,
   } as Content;
-}
-
-export async function processContentChunks(
-  content: string
-): Promise<ContentChunk[]> {
-  const chunks: ContentChunk[] = [];
-  const regex = /\[(component|content):(\s*[^\]]+)?\]/g;
-  let lastIndex = 0;
-
-  let match;
-  while ((match = regex.exec(content)) !== null) {
-    const [fullMatch, shortcodeType, paramsString] = match;
-    const start = match.index!;
-    const end = start + fullMatch.length;
-
-    if (start > lastIndex) {
-      chunks.push({
-        type: "text",
-        content: content.slice(lastIndex, start).trim(),
-      });
-    }
-
-    if (shortcodeType === "component") {
-      const [componentName, ...componentParams] = paramsString
-        .split(",")
-        .map((p) => p.trim());
-      const params: Record<string, string> = {};
-      componentParams.forEach((param) => {
-        const [key, value] = param.split("=").map((p) => p.trim());
-        params[key] = value;
-      });
-      chunks.push({
-        type: "component",
-        content: componentName,
-        params,
-      });
-    } else if (shortcodeType === "content") {
-      const params: Record<string, string> = {};
-      if (paramsString) {
-        paramsString.split(",").forEach((param) => {
-          const [key, value] = param
-            .trim()
-            .split("=")
-            .map((p) => p.trim());
-          params[key] = value;
-        });
-      }
-
-      const contentRequest: Partial<ContentRequest> = {
-        contentType: params.type as ContentType,
-        tag: params.tag,
-        page: params.page ? parseInt(params.page, 10) : undefined,
-        limit: params.limit ? parseInt(params.limit, 10) : undefined,
-      };
-
-      const contentData = await getContent(contentRequest);
-
-      chunks.push({
-        type: "content",
-        params,
-        data: contentData,
-      });
-    }
-
-    lastIndex = end;
-  }
-
-  if (lastIndex < content.length) {
-    chunks.push({ type: "text", content: content.slice(lastIndex).trim() });
-  }
-
-  return chunks;
 }
 
 export async function getContent({

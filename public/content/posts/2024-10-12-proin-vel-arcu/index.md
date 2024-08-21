@@ -31,6 +31,14 @@ Malesuada fames ac turpis egestas integer eget aliquet nibh:
 
 Egestas integer eget aliquet nibh praesent tristique magna sit amet purus gravida quis blandit turpis cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in cursus turpis.
 
+[gallery]
+
+![Maecenas Nec Odio Innovations Preview](./images/placeholder-4x3.webp)
+![Maecenas Nec Odio Innovations Preview](./images/placeholder-4x3.webp)
+![Maecenas Nec Odio Innovations Preview](./images/placeholder-4x3.webp)
+
+[/gallery]
+
 > Egestas integer eget aliquet nibh praesent tristique magna sit amet purus gravida quis blandit turpis cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet.
 
 ## Tellus Cras Adipiscing
